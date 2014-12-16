@@ -38,9 +38,16 @@ ldap_group_object_class = <%= node['sssd_ldap']['ldap_group_object_class'] %>
 <% if node['sssd_ldap']['ldap_default_bind_dn'] %>ldap_default_bind_dn = <%= node['sssd_ldap']['ldap_default_bind_dn'] %><% end %>
 <% if node['sssd_ldap']['ldap_default_authtok'] %>ldap_default_authtok = <%= node['sssd_ldap']['ldap_default_authtok'] %><% end %>
 
+<% if node['sssd_ldap']['ldap_auth_disable_tls_never_use_in_production'] %>ldap_auth_disable_tls_never_use_in_production = <%= node['sssd_ldap']['ldap_auth_disable_tls_never_use_in_production'] %><% end %>
+
 <% if node['sssd_ldap']['ldap_access_filter'] %>
 access_provider = <%= node['sssd_ldap']['access_provider'] %>
 ldap_access_filter = <%= node['sssd_ldap']['ldap_access_filter'] %>
+<% end %>
+
+<% if node['sssd_ldap']['ldap_sudo'] == 'true' %>
+sudo_provider = <%= node['sssd_ldap']['sudo_provider'] %>
+sudo_search_base = <%= node['sssd_ldap']['sudo_search_base'] %>
 <% end %>
 
 min_id = <%= node['sssd_ldap']['min_id'] %>
