@@ -46,7 +46,6 @@ ldap_access_filter = <%= node['sssd_ldap']['ldap_access_filter'] %>
 <% end %>
 
 <% if node['sssd_ldap']['ldap_sudo'] == 'true' %>
-sudo_provider = <%= node['sssd_ldap']['sudo_provider'] %>
 sudo_search_base = <%= node['sssd_ldap']['sudo_search_base'] %>
 <% end %>
 
